@@ -82,14 +82,8 @@ def _get_astropy_table(
                     return table[cm[to]]
 
             if not optional:
-                raise ValueError(
-                    (
-                        f"Table missing input {to} "
-                        f"with searched column names {vs}."
-                    )
-                )
-
-        # /def
+                msg = f"Table missing input {to} with searched column names {vs}."
+                raise ValueError(msg)
 
         ID = _helper("id", to="id", optional=True)
         m = _helper("m", "mass", to="m", optional=True)
