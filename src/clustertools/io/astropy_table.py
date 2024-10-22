@@ -81,8 +81,7 @@ def _get_astropy_table(
         def _helper(*vs: str, to: str, optional=False):
             for v in vs:  # equivalent to if/elif series
                 if v in colnames:
-                    cm[to] = table.colnames[colnames.index(v)]
-                    return table[cm[to]]
+                    return table[table.colnames[colnames.index(v)]]
 
             if not optional:
                 msg = f"Table missing input {to} with searched column names {vs}."
