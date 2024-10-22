@@ -88,7 +88,7 @@ def _get_astropy_table(
         ID = _helper("id", to="id", optional=True)
         m = _helper("m", "mass", to="m", optional=True)
 
-        if units == "radec" and origin == "sky":  # TOOD lowercase
+        if units == "radec" and origin == "sky":  # TODO lowercase
             # positions
             x = _helper("right ascension", "ra", to="x", optional=False)
             y = _helper("declination", "dec", to="y", optional=False)
