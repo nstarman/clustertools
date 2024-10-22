@@ -64,11 +64,11 @@ def _get_snapshot(
     nzfill = int(kwargs.get("nzfill", 5))
     delimiter = kwargs.get("delimiter", None)
     wdir = kwargs.get("wdir", "")
-    if wdir is not "":
+    if wdir != "":
         if wdir[-1] != '/':
             wdir+='/'
     snapdir = kwargs.get("snapdir", "")
-    if snapdir is not "":
+    if snapdir != "":
         if snapdir[-1] != '/':
             snapdir+='/'
     snapbase = kwargs.get("snapbase", "")
