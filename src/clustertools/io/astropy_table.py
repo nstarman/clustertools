@@ -1,5 +1,3 @@
-import copy
-
 import numpy as np
 
 from ..cluster.cluster import StarCluster
@@ -72,8 +70,6 @@ def _get_astropy_table(
     2020 - Written - Starkman (UofT)
 
     """
-    cm = copy.copy(column_mapper) if column_mapper is not None else {}
-
     if column_mapper is None:
         # lower-case colum names
         colnames = [n.lower() for n in table.colnames]
@@ -120,15 +116,17 @@ def _get_astropy_table(
             vz = _helper("v_x", "vz", to="vz", optional=False)
 
     else:  # column_mapper not None
-        x = table[cm.pop("x")]
-        y = table[cm.pop("y")]
-        z = table[cm.pop("z")]
-        vx = table[cm.pop("vx")]
-        vy = table[cm.pop("vy")]
-        vz = table[cm.pop("vz")]
+        cm = column_mapper
 
-        m = table[cm.pop("m")] if "m" in cm else None
-        ID = table[cm.pop("id")] if "id" in cm else None
+        x = table[cm["x"]]
+        y = table[cm["y"]]
+        z = table[cm["z"]]
+        vx = table[cm["vx"]]
+        vy = table[cm["vy"]]
+        vz = table[cm["vz"]]
+
+        m = table[cm["m"]] if "m" in cm else None
+        ID = table[cm["id"]] if "id" in cm else None
 
 
     cluster = StarCluster(
