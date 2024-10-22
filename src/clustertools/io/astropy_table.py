@@ -72,7 +72,7 @@ def _get_astropy_table(
     2020 - Written - Starkman (UofT)
 
     """
-    cm = copy.copy(column_mapper) if colum_mapper is not None else {}
+    cm = copy.copy(column_mapper) if column_mapper is not None else {}
 
     if column_mapper is None:
         # lower-case colum names
