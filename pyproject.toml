@@ -1,3 +1,20 @@
+[project]
+name = "clustertools"
+version = "1.1.0"
+description = "A python packaged for analysing star clusters"
+authors = [
+    {name = "Jeremy J. Webb", email = "webb@astro.utoronto.ca"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+license.file = "LICENSE"
+dependencies = [
+    "galpy>=1.8",
+    "numba>=0.60.0",
+    "numpy>1.8",
+    "scipy>=1.10",
+]
+
 [build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
